@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,12 @@ public partial class Pages_Home : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        UserService userService = new UserService();
 
+        GridView1.DataSource = userService.GetAllPersonas();
+        GridView1.DataBind();
+
+        Response.Write(userService.GetAllPersonas().Count);
     }
+
 }
