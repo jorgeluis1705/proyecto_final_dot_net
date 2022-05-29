@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,5 +16,4 @@ public partial class Pages_Home : System.Web.UI.Page
 
         Response.Write(userService.GetAllPersonas().Count);
     }
-
 }

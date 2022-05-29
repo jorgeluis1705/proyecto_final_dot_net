@@ -11,5 +11,4 @@ public partial class Pages_MasterPage : System.Web.UI.MasterPage
     {
 
     }
-    
 }
