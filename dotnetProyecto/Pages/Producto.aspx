@@ -1,4 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPage.master" AutoEventWireup="true" CodeFile="Producto.aspx.cs" Inherits="Pages_Producto" %>
+﻿<%@ Page Title="Producto Admin" Language="C#"
+    EnableEventValidation="false"
+    
+    MasterPageFile="~/Pages/MasterPage.master" AutoEventWireup="true" CodeFile="Producto.aspx.cs" Inherits="Pages_Producto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -7,7 +10,7 @@
     <div class="container d-flex" style="flex-direction: column">
         <h2 class="text text-center">Usuarios</h2>
         <asp:Button ID="Button1" runat="server" Text="Agregar Usuario" class="btn btn-danger btn-lg btn-block"
-            onCommand="onbtnAdd" />
+            onCommand="onBtnAddProducto" />
         <table class="table table-striped table-dark">
             <thead>
                 <tr>
@@ -28,10 +31,10 @@
 
                             <td>
                                 <div style="display: flex; justify-content:space-around;">
-                                    <asp:Button ID="BtnEdit" runat="server" Text="Editar" onCommand="btnEdit"
+                                    <asp:Button ID="BtnEdit" runat="server" Text="Editar" onCommand="btnEditProducto"
                                         class="btn btn-primary btn-lg btn-block" CommandName='<%# Eval("Id") %>'
                                         CommandArgument='<%# Eval("Id") %>' />
-                                    <asp:Button ID="BtnDelete" runat="server" Text="X" onCommand="btnDeletePelicula"
+                                    <asp:Button ID="BtnDelete" runat="server" Text="X" onCommand="btnDeleteProducto"
                                         class="btn btn-danger btn-lg btn-block" CommandName='<%# Eval("Id") %>'
                                         CommandArgument='<%# Eval("Id") %>' />
                                 </div>

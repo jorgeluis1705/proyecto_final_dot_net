@@ -11,8 +11,6 @@ public partial class Pages_Home : System.Web.UI.Page
     {
         UserService userService = new UserService();
 
-        GridView1.DataSource = userService.GetAllPersonas();
-        GridView1.DataBind();
 
         Response.Write(userService.GetAllPersonas().Count);
     }

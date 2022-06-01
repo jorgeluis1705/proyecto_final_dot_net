@@ -14,19 +14,19 @@ public partial class Pages_Producto : System.Web.UI.Page
         RepeaterPersona.DataSource = productosServicio.GetAllProducts();
         RepeaterPersona.DataBind();
     }
-    public void btnEdit(object sender, CommandEventArgs e)
+    public void btnEditProducto(object sender, CommandEventArgs e)
     {
-        Response.Redirect("/Detalles.aspx?id=" + e.CommandName);
+        //Response.Redirect("/Detalles.aspx?id=" + e.CommandName);
     }
-    public void btnDeletePelicula(object sender, CommandEventArgs e)
+    public void btnDeleteProducto(object sender, CommandEventArgs e)
     {
 
        
         this.Page_Load(sender, e);
     }
-    public void onbtnAdd(object sender, CommandEventArgs e)
+    public void onBtnAddProducto(object sender, CommandEventArgs e)
     {
-        Response.Redirect("/Nueo.aspx");
+       // Response.Redirect("/Nueo.aspx");
 
     }
 }
