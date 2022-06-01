@@ -27,7 +27,7 @@ AutoEventWireup="true" CodeFile="Shop.aspx.cs" Inherits="Pages_Shop" %>
             <li class="list-group-item">$<%# Eval("Precio") %></li>
             <li class="list-group-item">Disponibles <%# Eval("Cantidad") %></li>
           </ul>
-          <div class="card-body d-flex  flex-row justify-content-center">
+          <div class="card-body d-flex  flex-row justify-content-center" style="max-height:4rem">
             <button
               type="button"
               class="btn btn-outline-secondary waves-effect px-3"
