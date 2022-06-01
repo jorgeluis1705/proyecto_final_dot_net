@@ -16,7 +16,7 @@ public partial class Pages_Producto : System.Web.UI.Page
     }
     public void btnEditProducto(object sender, CommandEventArgs e)
     {
-        //Response.Redirect("/Detalles.aspx?id=" + e.CommandName);
+        //Response.Redirect("/Pages/ProductoEdit?id=" + e.CommandName);
     }
     public void btnDeleteProducto(object sender, CommandEventArgs e)
     {
@@ -25,7 +25,7 @@ public partial class Pages_Producto : System.Web.UI.Page
     }
     public void onBtnAddProducto(object sender, CommandEventArgs e)
     {
-       // Response.Redirect("/Nueo.aspx");
+        Response.Redirect("/Pages/NuevoProducto");
 
     }
 }
