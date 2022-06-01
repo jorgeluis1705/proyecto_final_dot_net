@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPage.master"
 AutoEventWireup="true" CodeFile="Shop.aspx.cs" Inherits="Pages_Shop" %>
 
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content
@@ -11,19 +10,19 @@ AutoEventWireup="true" CodeFile="Shop.aspx.cs" Inherits="Pages_Shop" %>
   class="container"
   style="display: flex"
 >
-    <style>
-    .card:hover{
-        cursor: pointer;
-          box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  <style>
+    .card:hover {
+      cursor: pointer;
+      box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
     }
-</style>
+  </style>
   <div
     class="d-flex flex-row justify-content-center align-content-between"
     style="gap: 2rem"
   >
     <asp:Repeater ID="RepeaterShop" runat="server">
       <ItemTemplate>
-        <div class="card " style="width: 18rem" >
+        <div class="card" style="width: 18rem">
           <img class="card-img-top mask rgba-red-strong" src="<%# Eval("Imagen")
           %>" alt="Card image cap">
           <div class="card-body">
@@ -34,7 +33,10 @@ AutoEventWireup="true" CodeFile="Shop.aspx.cs" Inherits="Pages_Shop" %>
             <li class="list-group-item">$<%# Eval("Precio") %></li>
             <li class="list-group-item">Disponibles <%# Eval("Cantidad") %></li>
           </ul>
-          <div class="card-body d-flex  flex-row justify-content-center" style="max-height:4rem">
+          <div
+            class="card-body d-flex flex-row justify-content-center"
+            style="max-height: 4rem"
+          >
             <button
               type="button"
               class="btn btn-outline-secondary waves-effect px-3"
