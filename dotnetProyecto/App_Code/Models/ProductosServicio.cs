@@ -32,7 +32,7 @@ public class ProductosServicio : Coneccion
         Connectar();
         try
         {
-            MySqlCommand comando = new MySqlCommand("Listar", cnn);
+            MySqlCommand comando = new MySqlCommand("getAllProducts", cnn);
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
