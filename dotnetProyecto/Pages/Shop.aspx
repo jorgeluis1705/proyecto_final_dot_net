@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPage.master"
 AutoEventWireup="true" CodeFile="Shop.aspx.cs" Inherits="Pages_Shop" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content
@@ -10,6 +11,12 @@ AutoEventWireup="true" CodeFile="Shop.aspx.cs" Inherits="Pages_Shop" %>
   class="container"
   style="display: flex"
 >
+    <style>
+    .card:hover{
+        cursor: pointer;
+          box-shadow: 0 0 11px rgba(33,33,33,.2); 
+    }
+</style>
   <div
     class="d-flex flex-row justify-content-center align-content-between"
     style="gap: 2rem"
