@@ -11,7 +11,6 @@ public partial class Pages_Home : System.Web.UI.Page
     {
         UserService userService = new UserService();
 
-
         Response.Write(userService.GetAllPersonas().Count);
     }
 }
