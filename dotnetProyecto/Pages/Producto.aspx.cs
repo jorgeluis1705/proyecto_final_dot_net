@@ -20,8 +20,7 @@ public partial class Pages_Producto : System.Web.UI.Page
     }
     public void btnDeleteProducto(object sender, CommandEventArgs e)
     {
-
-       
+        productosServicio.DeleteProductFromDB(int.Parse(e.CommandName));
         this.Page_Load(sender, e);
     }
     public void onBtnAddProducto(object sender, CommandEventArgs e)

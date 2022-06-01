@@ -59,5 +59,27 @@ public class ProductosServicio : Coneccion
             Desconectar();
         }
         return productos;
+    } 
+
+    public int DeleteProductFromDB(int id)
+    {
+        Connectar();
+        try
+        {
+            MySqlCommand comando = new MySqlCommand("deleteProduct", cnn);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add(new MySqlParameter("@IdDelete", id));
+            comando.ExecuteNonQuery();
+            comando.Dispose();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        finally
+        {
+            Desconectar();
+        }
+        return id;
     }
 }
