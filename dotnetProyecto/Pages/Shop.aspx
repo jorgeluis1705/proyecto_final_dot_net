@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPage.master"
-AutoEventWireup="true" CodeFile="Shop.aspx.cs" Inherits="Pages_Shop" %>
+AutoEventWireup="true" CodeFile="Shop.aspx.cs" Inherits="Pages_Shop" 
+    EnableEventValidation="false"
+    %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -38,11 +40,17 @@ AutoEventWireup="true" CodeFile="Shop.aspx.cs" Inherits="Pages_Shop" %>
             style="max-height: 4rem"
           >
             <button
-              type="button"
-              class="btn btn-outline-secondary waves-effect px-3"
-            >
+               />
               <i class="fas fa-cart-arrow-down"></i>
             </button>
+              <asp:Button ID="Button1" runat="server" 
+                  type="button"
+              class="btn btn-outline-secondary waves-effect px-3"
+                CommandName='<%# Eval("Id") %>'
+                onCommand="onBtnAddProductToCart"
+                CommandArgument='<%# Eval("Id") %>'
+                  
+                  />
             <button
               type="button"
               class="btn btn-outline-info waves-effect px-3"

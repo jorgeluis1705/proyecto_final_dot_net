@@ -16,7 +16,6 @@ public partial class Pages_NuevoProducto : System.Web.UI.Page
     public void btnClick(object sender, EventArgs e)
     {
 
-
         producto = new Producto()
         {
             Nombre = inputNameProductNew.Text,
