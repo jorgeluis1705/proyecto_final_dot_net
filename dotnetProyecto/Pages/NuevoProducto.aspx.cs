@@ -21,8 +21,8 @@ public partial class Pages_NuevoProducto : System.Web.UI.Page
         {
             Nombre = inputNameProductNew.Text,
             Imagen = inputImageProductNew.Text,
-            Cantidad=0,
-            Precio=0,
+            Cantidad = int.Parse(inputCantidadProductNew.Text),
+            Precio = int.Parse(inputPrecioProductNew.Text),
         };
         productosServicio.createProductToDb(producto);
         Response.Redirect("/Pages/Home");
