@@ -59,5 +59,51 @@ public class ProductosServicio : Coneccion
             Desconectar();
         }
         return productos;
+    } 
+
+    public int DeleteProductFromDB(int id)
+    {
+        Connectar();
+        try
+        {
+            MySqlCommand comando = new MySqlCommand("deleteProduct", cnn);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add(new MySqlParameter("@IdDelete", id));
+            comando.ExecuteNonQuery();
+            comando.Dispose();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        finally
+        {
+            Desconectar();
+        }
+        return id;
+    }
+    public Producto createProductToDb(Producto producto)
+    {
+        Connectar();
+        try
+        {
+            MySqlCommand comando = new MySqlCommand("insertProduct", cnn);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add(new MySqlParameter("@Nombre", producto.Nombre));
+            comando.Parameters.Add(new MySqlParameter("@Cantidad", (producto.Cantidad)));
+            comando.Parameters.Add(new MySqlParameter("@Precio", producto.Precio));
+            comando.Parameters.Add(new MySqlParameter("@Imagen", producto.Imagen));
+            comando.ExecuteNonQuery();
+            comando.Dispose();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        finally
+        {
+            Desconectar();
+        }
+        return producto;
     }
 }
