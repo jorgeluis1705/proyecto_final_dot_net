@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:Repeater ID="Repeater1" runat="server">
         <ItemTemplate>
-            <p> <%# Eval("Product.Nombre") %>></p>
+            <p> <%# Eval("Product.Nombre") %></p>
             <p> <%# Eval("Quantity") %></p>
         </ItemTemplate>
     </asp:Repeater>
