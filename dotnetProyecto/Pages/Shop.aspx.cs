@@ -37,7 +37,7 @@ public partial class Pages_Shop : System.Web.UI.Page
             ProductId = int.Parse(e.CommandName),
             Product = prod
         };
-     ShopCart.AddProductToCartShop(int.Parse(e.CommandName), prod);
+        ShopCart.AddProductToCartShop(int.Parse(e.CommandName), prod);
 
         Response.Write(ShopCart.cartItems.Count);
         Response.Write(" ");

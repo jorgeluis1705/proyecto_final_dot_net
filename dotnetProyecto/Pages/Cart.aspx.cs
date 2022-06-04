@@ -41,4 +41,5 @@ public partial class Pages_Cart : System.Web.UI.Page
         }
             
     }
+        public void onBtnDeleteProductFromCart(object sender, CommandEventArgs e){}
 }   

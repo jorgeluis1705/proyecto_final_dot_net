@@ -32,8 +32,8 @@ AutoEventWireup="true" CodeFile="Shop.aspx.cs" Inherits="Pages_Shop"
             <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">$<%# Eval("Precio") %></li>
-            <li class="list-group-item">Disponibles <%# Eval("Cantidad") %></li>
+            <li class="list-group-item">Precio $<%# Eval("Precio") %></li>
+      <!--     <li class="list-group-item">Disponibles <%# Eval("Cantidad") %></li> --> 
           </ul>
           <div
             class="card-body d-flex flex-row justify-content-center"
