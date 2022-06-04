@@ -32,7 +32,7 @@ public partial class Pages_Cart : System.Web.UI.Page
                 }
                 element.Quantity = item.Count();
                 element.ProductId = item.Key;
-                results.Add(element);
+                results.Add(element);   
 
             }
             Repeater1.DataSource = results;
@@ -41,4 +41,4 @@ public partial class Pages_Cart : System.Web.UI.Page
         }
             
     }
-}
+}   
