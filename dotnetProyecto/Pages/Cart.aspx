@@ -33,6 +33,7 @@ AutoEventWireup="true" CodeFile="Cart.aspx.cs" Inherits="Pages_Cart" %>
             <li class="list-group-item">
               Cantidad
               <asp:TextBox
+                  disabled
                 type="number"
                 ID="inputShopCartQuantity"
                 runat="server"
@@ -58,4 +59,5 @@ AutoEventWireup="true" CodeFile="Cart.aspx.cs" Inherits="Pages_Cart" %>
       </ItemTemplate>
     </asp:Repeater>
   </div>
+    <asp:Label ID="lblTotal" runat="server" Text="Label" CssClass="h2"></asp:Label>
 </asp:Content>

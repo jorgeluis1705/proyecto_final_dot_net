@@ -21,8 +21,8 @@ public partial class Pages_Cart : System.Web.UI.Page
                 var element = new CartItem();
                 foreach (var i in productos)
                 {
-                    
-                    if(i.Id == item.Key)
+
+                    if (i.Id == item.Key)
                     {
                         element.Product = i;
                         element.Product.Id = i.Id;
@@ -32,14 +32,15 @@ public partial class Pages_Cart : System.Web.UI.Page
                 }
                 element.Quantity = item.Count();
                 element.ProductId = item.Key;
-                results.Add(element);   
+                results.Add(element);
 
             }
             Repeater1.DataSource = results;
             Repeater1.DataBind();
 
         }
-            
+        lblTotal.Text = ShopCart.getTotalPriceFromCart() == 0 ? "No hay productos en el carro":  "Total " +  ShopCart.getTotalPriceFromCart().ToString();
+
     }
 
         public void onBtnDeleteProductFromCart(object sender, CommandEventArgs e){
@@ -50,7 +51,10 @@ public partial class Pages_Cart : System.Web.UI.Page
                 ShopCart.cartItems.Remove(ShopCart.cartItems[ele]);
             }
             this.Page_Init(sender, e);
-        }catch(Exception ex)
+            Response.Redirect("/Pages/Loading?redirect=" +  "Cart");
+
+        }
+        catch (Exception ex)
         {
             Response.Write(ex.Message);
         }
