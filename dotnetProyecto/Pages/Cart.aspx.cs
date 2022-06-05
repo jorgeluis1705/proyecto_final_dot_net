@@ -39,11 +39,11 @@ public partial class Pages_Cart : System.Web.UI.Page
             Repeater1.DataBind();
 
         }
-        lblTotal.Text = ShopCart.getTotalPriceFromCart() == 0 ? "No hay productos en el carro":  "Total " +  ShopCart.getTotalPriceFromCart().ToString();
-
+        lblTotal.Text = ShopCart.cartItems.Count == 0 ? "No hay productos en el carro" : "Total " + ShopCart.getTotalPriceFromCart().ToString();
+        btnPayShop.Style.Add("display", ShopCart.cartItems.Count== 0? "none": "block");
     }
 
-        public void onBtnDeleteProductFromCart(object sender, CommandEventArgs e){
+    public void onBtnDeleteProductFromCart(object sender, CommandEventArgs e){
         try
         {
             for (var ele = 0; ele < ShopCart.cartItems.Count; ele++ )

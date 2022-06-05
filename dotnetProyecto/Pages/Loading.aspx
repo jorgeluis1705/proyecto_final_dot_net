@@ -8,7 +8,7 @@ AutoEventWireup="true" CodeFile="Loading.aspx.cs" Inherits="Pages_Loading" %>
   ContentPlaceHolderID="ContentPlaceHolder1"
   Runat="Server"
 >
-  <div class="fa-10x d-flex justify-content-center align-content-center"   >
-    <i class="fas fa-sync fa-spin" ></i>
+  <div class="fa-10x d-flex justify-content-center align-content-center">
+    <i class="fas fa-sync fa-spin"></i>
   </div>
 </asp:Content>
