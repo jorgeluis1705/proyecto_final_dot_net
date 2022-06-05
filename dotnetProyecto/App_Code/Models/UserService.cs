@@ -48,4 +48,39 @@ public class UserService: Coneccion
         }
         return personas;
     }
+
+    public User LoginUser(string email,string password)
+    {
+        User userLogged = new User();
+        Connectar();
+        try
+        {
+            MySqlCommand comando = new MySqlCommand("loginUser", cnn);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            comando.Parameters.Add(new MySqlParameter("@Email", email));
+            comando.Parameters.Add(new MySqlParameter("@Psw", password));
+            comando.ExecuteNonQuery();
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+
+                userLogged.Name = reader["name"] + " ";
+                    userLogged.Password = reader["password"] + " ";
+                userLogged.Email = reader["email"] + " ";
+                userLogged.Id = int.Parse(reader["id"] + " ");
+            }
+            reader.Close();
+            comando.Dispose();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        finally
+        {
+            Desconectar();
+        }
+        return userLogged;
+    }
 }
