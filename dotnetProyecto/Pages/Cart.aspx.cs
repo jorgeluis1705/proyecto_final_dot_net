@@ -11,7 +11,7 @@ public partial class Pages_Cart : System.Web.UI.Page
     private List<CartItem> results = new List<CartItem>();
     private  ProductosServicio productosServicio = new ProductosServicio();
 
-    protected void Page_Load(object sender, EventArgs e)
+    protected void Page_Init(object sender, EventArgs e)
     {
         productos = productosServicio.GetAllProducts();
         if (!IsPostBack)
@@ -41,5 +41,19 @@ public partial class Pages_Cart : System.Web.UI.Page
         }
             
     }
-        public void onBtnDeleteProductFromCart(object sender, CommandEventArgs e){}
+
+        public void onBtnDeleteProductFromCart(object sender, CommandEventArgs e){
+        try
+        {
+            for (var ele = 0; ele < ShopCart.cartItems.Count; ele++ )
+            {
+                ShopCart.cartItems.Remove(ShopCart.cartItems[ele]);
+            }
+            this.Page_Init(sender, e);
+        }catch(Exception ex)
+        {
+            Response.Write(ex.Message);
+        }
+    
+        }
 }   

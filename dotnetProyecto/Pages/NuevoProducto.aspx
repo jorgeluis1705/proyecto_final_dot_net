@@ -1,4 +1,5 @@
-﻿﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPage.master"
+﻿﻿<%@ Page Title="Producto x" Language="C#"
+    EnableEventValidation="false" MasterPageFile="~/Pages/MasterPage.master"
 AutoEventWireup="true" CodeFile="NuevoProducto.aspx.cs"
 Inherits="Pages_NuevoProducto" %>
 
