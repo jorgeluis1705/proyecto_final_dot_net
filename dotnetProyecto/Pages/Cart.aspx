@@ -71,7 +71,7 @@ AutoEventWireup="true" CodeFile="Cart.aspx.cs" Inherits="Pages_Cart" %>
       runat="server"
       Text="Pagar"
       CssClass="btn btn-danger btn-sm"
-        onClick="onBtnPay"
+      onClick="onBtnPay"
     />
   </div>
 </asp:Content>
