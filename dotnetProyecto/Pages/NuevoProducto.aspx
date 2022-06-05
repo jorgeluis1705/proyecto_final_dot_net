@@ -1,7 +1,7 @@
-﻿﻿<%@ Page Title="Producto x" Language="C#"
+﻿﻿<%@Page Title="Producto x" Language="C#"
     EnableEventValidation="false" MasterPageFile="~/Pages/MasterPage.master"
-AutoEventWireup="true" CodeFile="NuevoProducto.aspx.cs"
-Inherits="Pages_NuevoProducto" %>
+    AutoEventWireup="true" CodeFile="NuevoProducto.aspx.cs"
+    Inherits="Pages_NuevoProducto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>

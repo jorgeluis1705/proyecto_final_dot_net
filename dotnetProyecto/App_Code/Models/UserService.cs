@@ -21,16 +21,17 @@ public class UserService: Coneccion
         Connectar();
         try
         {
-            MySqlCommand comando = new MySqlCommand("Listar", cnn);
+            MySqlCommand comando = new MySqlCommand("listarUsers", cnn);
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             MySqlDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {
                 User persona = new User()
                 {
-                    Id =(reader[0] + "").ToString(),
-                    Name = reader["name"].ToString(),
-                    age = int.Parse(reader["age"] +""),
+                    Name = reader["name"]+" ",
+                    Password = reader["password"] + " ",
+                    Email = reader["email"] + " ",
+                    Id = int.Parse(reader["id"] + " "),
                 };
                 personas.Add(persona);
             }
