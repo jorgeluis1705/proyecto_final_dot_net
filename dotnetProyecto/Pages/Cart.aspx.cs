@@ -60,4 +60,9 @@ public partial class Pages_Cart : System.Web.UI.Page
         }
     
         }
+
+    public void onBtnPay(object sender, EventArgs e)
+    {
+        Response.Redirect("/Pages/Home");
+    }
 }   
