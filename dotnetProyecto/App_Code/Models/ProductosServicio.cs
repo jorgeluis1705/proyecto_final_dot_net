@@ -60,7 +60,38 @@ public class ProductosServicio : Coneccion
         }
         return productos;
     } 
-
+    public Producto getOneProducto(int id)
+    {
+        Producto p= new Producto();
+        Connectar();
+        try
+        {
+            MySqlCommand comando = new MySqlCommand("Detalles", cnn);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add(new MySqlParameter("@id", id));
+            comando.ExecuteNonQuery();
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                p.Id = int.Parse((reader[0] + "").ToString());
+                p.Nombre = reader["nombre"].ToString();
+                p.Precio = int.Parse(reader["precio"] + "");
+                p.Cantidad = int.Parse(reader["cantidad"] + "");
+                p.Imagen = (reader["imagen"] + "");
+            }
+            reader.Close();
+            comando.Dispose();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        finally
+        {
+            Desconectar();
+        }
+        return p;
+    }
     public int DeleteProductFromDB(int id)
     {
         Connectar();
