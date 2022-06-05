@@ -23,6 +23,8 @@ public partial class Pages_NuevoProducto : System.Web.UI.Page
             Cantidad = int.Parse(inputCantidadProductNew.Text),
             Precio = int.Parse(inputPrecioProductNew.Text),
         };
+
+        
         productosServicio.createProductToDb(producto);
         Response.Redirect("/Pages/Home");
     }
