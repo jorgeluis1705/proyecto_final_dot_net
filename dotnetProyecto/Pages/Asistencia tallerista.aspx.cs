@@ -6,8 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.ComponentModel.DataAnnotations;
 
-namespace PF_dot_net
-{
     public partial class Asistencia_tallerista : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -42,7 +40,7 @@ namespace PF_dot_net
             }
         }
 
-            public DateTime TodaysDate { get; set; }
+        public DateTime TodaysDate { get; set; }
 
         protected void Calendar2_DayRender(object sender, DayRenderEventArgs e)
         {
@@ -62,4 +60,3 @@ namespace PF_dot_net
             }
         }
     }
-}

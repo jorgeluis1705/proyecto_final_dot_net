@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Talleristas.aspx.cs" Inherits="Talleristas" MasterPageFile="~/Pages/MasterPage.master"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Talleristas.aspx.cs" Inherits="Talleristas" MasterPageFile="~/Pages/MasterPage.master" %>
 
 <!DOCTYPE html>
 
@@ -69,7 +69,7 @@
                     <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Asistencia tallerista" />
                 </td>
                 <td>
-                    <asp:Button ID="Button3" runat="server" Text="Regresar" />
+                    <asp:Button ID="Button3" runat="server" Text="Regresar" OnClick="Button3_Click" />
                 </td>
             </tr>
         </table>

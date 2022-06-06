@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Asistencia tallerista.aspx.cs" MasterPageFile="~/Pages/MasterPage.master" Inherits="Asistencia_tallerista" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Asistencia tallerista.aspx.cs" Inherits="Asistencia_tallerista" MasterPageFile="~/Pages/MasterPage.master" %>
 
 <!DOCTYPE html>
 
@@ -159,3 +159,4 @@
     </form>
 </body>
 </html>
+
