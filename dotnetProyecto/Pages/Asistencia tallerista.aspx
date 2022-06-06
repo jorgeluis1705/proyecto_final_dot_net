@@ -1,67 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Asistencia tallerista.aspx.cs" Inherits="PF_dot_net.Asistencia_tallerista" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Asistencia tallerista.aspx.cs" MasterPageFile="~/Pages/MasterPage.master" Inherits="Asistencia_tallerista" %>
 
 <!DOCTYPE html>
-<script runat="server">
-
-   namespace PF_dot_net
-{
-    public partial class Asistencia_tallerista : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Talleristas.aspx");
-        }
-
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        protected void Calendar1_DayRender(Object sender, DayRenderEventArgs e)
-        {
-            if (e.Day.IsOtherMonth)
-            {
-                e.Day.IsSelectable = false;
-            }
-
-            if (e.Day.IsWeekend)
-            {
-                e.Day.IsSelectable = false;
-            }
-
-            if (e.Day.Date > DateTime.Today)
-            {
-                e.Day.IsSelectable = false;
-            }
-        }
-
-            public DateTime TodaysDate { get; set; }
-
-        protected void Calendar2_DayRender(object sender, DayRenderEventArgs e)
-        {
-            if (e.Day.IsOtherMonth)
-            {
-                e.Day.IsSelectable = false;
-            }
-
-            if (e.Day.IsWeekend)
-            {
-                e.Day.IsSelectable = false;
-            }
-
-            if (e.Day.Date > DateTime.Today)
-            {
-                e.Day.IsSelectable = false;
-            }
-        }
-    }
-}
-</script>
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -100,7 +39,7 @@
                 <td>
                     <table class="auto-style2">
                         <tr>
-                            <td>Asistencia:<asp:Calendar ID="Calendar1" runat="server" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" ShowGridLines="True" Width="220px" OnDayRender="Calendar1_DayRender" OnSelectionChanged="Calendar1_SelectionChanged">
+                            <td>Asistencia:<asp:Calendar ID="Calendar1" runat="server" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" ShowGridLines="True" Width="220px" OnDayRender="Calendar1_DayRender">
                                 <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
                                 <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
                                 <OtherMonthDayStyle ForeColor="#CC9966" />

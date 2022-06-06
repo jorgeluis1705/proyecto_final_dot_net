@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Talleristas.aspx.cs" Inherits="PF_dot_net.Talleristas" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Talleristas.aspx.cs" Inherits="Talleristas" MasterPageFile="~/Pages/MasterPage.master"%>
 
 <!DOCTYPE html>
 
