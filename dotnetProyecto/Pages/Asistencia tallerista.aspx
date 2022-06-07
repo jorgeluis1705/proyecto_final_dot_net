@@ -1,11 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Asistencia tallerista.aspx.cs" Inherits="Asistencia_tallerista" MasterPageFile="~/Pages/MasterPage.master" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content
+  ID="Content2"
+  ContentPlaceHolderID="ContentPlaceHolder1"
+  Runat="Server"
+>
     <style type="text/css">
         .auto-style1 {
             text-decoration: underline;
@@ -22,10 +23,8 @@
             background-position: center top;
         }
     </style>
-</head>
-<body class="nuevoEstilo1">
-    <form id="form1" runat="server">
-        <div class="auto-style1">
+
+            <div class="auto-style1">
             <strong>Ingresa asistencia tallerista</strong></div>
         <p>
             Nombre tallerista
@@ -156,7 +155,6 @@
             </tr>
         </table>
         <br />
-    </form>
-</body>
-</html>
 
+</asp:Content>
+   

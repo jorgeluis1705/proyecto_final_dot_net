@@ -1,11 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Talleristas.aspx.cs" Inherits="Talleristas" MasterPageFile="~/Pages/MasterPage.master" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content
+  ID="Content2"
+  ContentPlaceHolderID="ContentPlaceHolder1"
+  Runat="Server"
+>
     <style type="text/css">
         .auto-style1 {
             text-align: center;
@@ -23,9 +24,8 @@
         }
 
     </style>
-</head>
-<body class="nuevoEstilo1">
-    <form id="form1" runat="server">
+
+    <body class="nuevoEstilo1">
         <div class="auto-style1">
             <strong>Informacion talleristas</strong></div>
         <p>
@@ -73,6 +73,4 @@
                 </td>
             </tr>
         </table>
-    </form>
-</body>
-</html>
+</asp:Content>
