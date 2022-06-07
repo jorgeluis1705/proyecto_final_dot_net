@@ -85,7 +85,17 @@ AutoEventWireup="true" CodeFile="Talleres.aspx.cs" Inherits="Pages_Default" %>
                             <asp:BoundField DataField="id_tallerista" HeaderText="id_tallerista" SortExpression="id_tallerista" />
                         </Columns>
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:MICENTRO_PFINALConnectionString %>" SelectCommand="Agrega_taller" SelectCommandType="StoredProcedure">
+                    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:MICENTRO_PFINALConnectionString %>" SelectCommand="insert into [dbo].[Taller]
+	(
+	id_taller,
+	nom_taller,
+	hora_taller,
+	id_tallerista
+	)
+
+	values (@id_taller, @nom_taller, @hora_taller, @id_tallerista)
+
+	SELECT *from Taller where nom_taller = @nom_taller">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="TextBox3" Name="id_taller" PropertyName="Text" Type="Int32" />
                             <asp:ControlParameter ControlID="TextBox2" Name="nom_taller" PropertyName="Text" Type="String" />

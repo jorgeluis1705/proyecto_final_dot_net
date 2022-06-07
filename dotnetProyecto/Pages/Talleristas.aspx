@@ -25,7 +25,7 @@
 
     </style>
 
-    <body class="nuevoEstilo1">
+    <body>
         <div class="auto-style1">
             <strong>Informacion talleristas</strong></div>
         <p>
@@ -54,7 +54,8 @@
             <SortedDescendingCellStyle BackColor="#FCF6C0" />
             <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MICENTRO_PFINALConnectionString %>" SelectCommand="Info_Tallerista" SelectCommandType="StoredProcedure">
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MICENTRO_PFINALConnectionString %>" SelectCommand="
+Select *from Taller AS t1 INNER JOIN Tallerista AS t2 ON (t1.id_tallerista =@Id_tallerista) and (t2.id_tallerista = @Id_tallerista) WHERE t1.id_tallerista = @Id_tallerista">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList1" Name="id_tallerista" PropertyName="SelectedValue" Type="Int32" />
             </SelectParameters>

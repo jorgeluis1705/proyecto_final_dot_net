@@ -78,7 +78,13 @@
                                     <SortedDescendingCellStyle BackColor="#FCF6C0" />
                                     <SortedDescendingHeaderStyle BackColor="#820000" />
                                 </asp:GridView>
-                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MICENTRO_PFINALConnectionString %>" SelectCommand="Asistencia_Tallerista" SelectCommandType="StoredProcedure">
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MICENTRO_PFINALConnectionString %>" SelectCommand="	INSERT INTO [dbo].[Asist_Tallerista] 
+	([id_tallerista],
+	[dia_asis])
+	VALUES (@id_tallerista, @dia_asis)
+
+	SELECT t1.id_tallerista, nom_tallerista, dia_asis FROM Asist_Tallerista as t1 inner join Tallerista as t2 on t1.id_tallerista = t2.id_tallerista WHERE t1.id_tallerista = @id_tallerista and dia_asis = @dia_asis
+">
                                     <SelectParameters>
                                         <asp:ControlParameter ControlID="DropDownList1" Name="id_tallerista" PropertyName="SelectedValue" Type="Int32" />
                                         <asp:ControlParameter ControlID="Calendar1" DbType="Date" Name="dia_asis" PropertyName="SelectedDate" />
@@ -103,7 +109,13 @@
                                     <SortedDescendingCellStyle BackColor="#FCF6C0" />
                                     <SortedDescendingHeaderStyle BackColor="#820000" />
                                 </asp:GridView>
-                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MICENTRO_PFINALConnectionString %>" SelectCommand="falta_taller" SelectCommandType="StoredProcedure">
+                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MICENTRO_PFINALConnectionString %>" SelectCommand="INSERT INTO [dbo].[Asist_Tallerista] 
+	([id_tallerista],
+	[dia_falt])
+	VALUES (@id_tallerista, @dia_falt)
+
+	SELECT t1.id_tallerista, nom_tallerista, dia_falt FROM Asist_Tallerista as t1 inner join Tallerista as t2 on t1.id_tallerista = t2.id_tallerista WHERE t1.id_tallerista = @id_tallerista and dia_falt = @dia_falt
+">
                                     <SelectParameters>
                                         <asp:ControlParameter ControlID="DropDownList1" Name="id_tallerista" PropertyName="SelectedValue" Type="Int32" />
                                         <asp:ControlParameter ControlID="Calendar2" DbType="Date" Name="dia_falt" PropertyName="SelectedDate" />
@@ -141,7 +153,8 @@
             <SortedDescendingCellStyle BackColor="#FCF6C0" />
             <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:MICENTRO_PFINALConnectionString %>" SelectCommand="Asistencia_faltas_talleristas" SelectCommandType="StoredProcedure">
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:MICENTRO_PFINALConnectionString %>" SelectCommand="SELECT t1.id_tallerista, nom_tallerista, dia_asis, dia_falt FROM Asist_Tallerista as t1 inner join Tallerista as t2 on t1.id_tallerista = t2.id_tallerista WHERE t1.id_tallerista = @id_tallerista
+">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList2" Name="id_tallerista" PropertyName="SelectedValue" Type="Int32" />
             </SelectParameters>
