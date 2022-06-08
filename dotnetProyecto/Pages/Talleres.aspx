@@ -35,14 +35,8 @@ AutoEventWireup="true" CodeFile="Talleres.aspx.cs" Inherits="Pages_Default" %>
         <table class="w-100">
             <tr>
                 <td>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id_taller" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="gvTalleres" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
-            <Columns>
-                <asp:BoundField DataField="id_taller" HeaderText="id_taller" ReadOnly="True" SortExpression="id_taller" />
-                <asp:BoundField DataField="nom_taller" HeaderText="nom_taller" SortExpression="nom_taller" />
-                <asp:BoundField DataField="hora_taller" HeaderText="hora_taller" SortExpression="hora_taller" />
-                <asp:BoundField DataField="id_tallerista" HeaderText="id_tallerista" SortExpression="id_tallerista" />
-            </Columns>
             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
@@ -107,7 +101,6 @@ AutoEventWireup="true" CodeFile="Talleres.aspx.cs" Inherits="Pages_Default" %>
                 </td>
             </tr>
     </table>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MICENTRO_PFINALConnectionString %>" SelectCommand="SELECT * FROM [Taller]"></asp:SqlDataSource>
         <p>
             <asp:Button ID="Button1" runat="server" Text="Regresar" OnClick="Button1_Click" />
         </p>
